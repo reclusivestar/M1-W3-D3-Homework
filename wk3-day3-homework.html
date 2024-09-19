@@ -54,9 +54,7 @@
 
 <div id="solution"></div>
 
-
 <script>
-
   function squareNumber(num) {
       var squaredNumber = num * num;
       document.getElementById("solution").innerHTML = 'The result of squaring the number ' + num + ' is ' + squaredNumber;
@@ -68,12 +66,54 @@
     squareNumber(num);
   });
 
-  /* Preview this page on the browser and test the first calculation */
+  // Function to half a number
+  function halfNumber(num) {
+      var half = num / 2;
+      document.getElementById("solution").innerHTML = 'Half of ' + num + ' is ' + half;
+  }
 
-  /* Now it's your turn to do the rest as seen on the preview */
+  var halfButton = document.getElementById("half-button");
+  halfButton.addEventListener("click", function() {
+    var num = document.getElementById("half-input").value;
+    halfNumber(num);
+  });
 
-  /* WRITE YOUR HOMEWORK SCRIPTS BELOW HERE */
+  // Function to calculate percentage
+  function percentOf(fraction, whole) {
+      var percent = (fraction / whole) * 100;
+      document.getElementById("solution").innerHTML = fraction + ' is ' + percent + '% of ' + whole;
+  }
 
+  var percentButton = document.getElementById("percent-button");
+  percentButton.addEventListener("click", function() {
+    var fraction = document.getElementById("percent1-input").value;
+    var whole = document.getElementById("percent2-input").value;
+    percentOf(fraction, whole);
+  });
+
+  // Function to convert to integer
+  function integerConversion(num) {
+      var integer = Math.floor(num);
+      document.getElementById("solution").innerHTML = 'The integer value of ' + num + ' is ' + integer;
+  }
+
+  var intButton = document.getElementById("int-button");
+  intButton.addEventListener("click", function() {
+    var num = document.getElementById("int-input").value;
+    integerConversion(num);
+  });
+
+  // Function to calculate area of a circle
+  function calculateArea(radius) {
+      var area = Math.PI * radius * radius;
+      document.getElementById("solution").innerHTML = 'The area of a circle with radius ' + radius + ' is ' + area.toFixed(2);
+  }
+
+  var areaButton = document.getElementById("area-button");
+  areaButton.addEventListener("click", function() {
+    var radius = document.getElementById("area-input").value;
+    calculateArea(radius);
+  });
 
 </script>
 </body>
